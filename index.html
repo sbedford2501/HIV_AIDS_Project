@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIV/AIDS Gender &amp; Regional Disparities Dashboard</title>
+  <meta name="description" content="Interactive dashboard visualizing HIV/AIDS gender and regional disparities for adolescents (ages 10–19) across UNICEF regions, 1990–2019." />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- CDN Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <noscript>
+    <style>body { display:flex; align-items:center; justify-content:center; height:100vh; background:#0f1117; color:#e2e8f0; font-family:sans-serif; }</style>
+    <div style="text-align:center;padding:2rem">
+      <h2>JavaScript Required</h2>
+      <p>Please enable JavaScript to view this dashboard.</p>
+    </div>
+  </noscript>
+</head>
+<body>
+
+<!-- ── Sticky Header ──────────────────────────────────────────────────── -->
+<header id="sticky-header" role="banner">
+  <div class="header-top">
+    <h1>
+      <span class="dot" aria-hidden="true"></span>
+      HIV/AIDS Gender &amp; Regional Disparities Dashboard
+    </h1>
+    <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap">
+      <span id="data-info">Data: UNICEF · Ages 10–19 · 1990–2019</span>
+      <button id="btn-export-pdf" class="btn btn-primary" aria-label="Export dashboard as PDF">📄 Export PDF</button>
+    </div>
+  </div>
+
+  <div class="filter-bar" role="search" aria-label="Dashboard filters">
+    <div class="filter-group">
+      <label for="filter-region">Region:</label>
+      <select id="filter-region" aria-label="Filter by UNICEF region">
+        <option value="All Regions">All Regions</option>
+        <option value="Eastern and Southern Africa">Eastern and Southern Africa</option>
+        <option value="West and Central Africa">West and Central Africa</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="filter-year-start">Year:</label>
+      <input type="number" id="filter-year-start" value="1990" min="1990" max="2019"
+             aria-label="Start year" />
+      <span style="color:var(--muted)">to</span>
+      <input type="number" id="filter-year-end" value="2019" min="1990" max="2019"
+             aria-label="End year" />
+    </div>
+
+    <button id="filter-reset" class="btn btn-secondary" aria-label="Reset all filters">Reset</button>
+  </div>
+</header>
+
+<!-- ── Error Banner ───────────────────────────────────────────────────── -->
+<div id="error-banner" role="alert" aria-live="assertive">
+  <strong>Error loading dashboard:</strong> <span id="error-message"></span>
+</div>
+
+<!-- ── Dashboard Content ─────────────────────────────────────────────── -->
+<main id="dashboard-content">
+
+  <!-- Section 1: Overview & KPIs -->
+  <section class="section" aria-labelledby="section-kpis-title">
+    <h2 class="section-title" id="section-kpis-title">Overview &amp; KPIs</h2>
+    <div class="kpi-grid">
+
+      <div class="kpi-card female" aria-label="Female new infections">
+        <div class="kpi-label">Female New Infections</div>
+        <div class="kpi-value" id="kpi-female-infections">—</div>
+      </div>
+
+      <div class="kpi-card male" aria-label="Male new infections">
+        <div class="kpi-label">Male New Infections</div>
+        <div class="kpi-value" id="kpi-male-infections">—</div>
+      </div>
+
+      <div class="kpi-card female" aria-label="Female AIDS deaths">
+        <div class="kpi-label">Female AIDS Deaths</div>
+        <div class="kpi-value" id="kpi-female-deaths">—</div>
+      </div>
+
+      <div class="kpi-card male" aria-label="Male AIDS deaths">
+        <div class="kpi-label">Male AIDS Deaths</div>
+        <div class="kpi-value" id="kpi-male-deaths">—</div>
+      </div>
+
+      <div class="kpi-card female" aria-label="Female avg incidence rate">
+        <div class="kpi-label">Female Avg Incidence</div>
+        <div class="kpi-value" id="kpi-female-incidence">—</div>
+        <div style="font-size:0.7rem;color:var(--muted)">per 1,000</div>
+      </div>
+
+      <div class="kpi-card male" aria-label="Male avg incidence rate">
+        <div class="kpi-label">Male Avg Incidence</div>
+        <div class="kpi-value" id="kpi-male-incidence">—</div>
+        <div style="font-size:0.7rem;color:var(--muted)">per 1,000</div>
+      </div>
+
+      <div class="kpi-card female" aria-label="Female PLHIV">
+        <div class="kpi-label">Female PLHIV</div>
+        <div class="kpi-value" id="kpi-female-plhiv">—</div>
+      </div>
+
+      <div class="kpi-card male" aria-label="Male PLHIV">
+        <div class="kpi-label">Male PLHIV</div>
+        <div class="kpi-value" id="kpi-male-plhiv">—</div>
+      </div>
+
+      <div class="kpi-card ratio" aria-label="Gender disparity ratio">
+        <div class="kpi-label">Gender Disparity Ratio</div>
+        <div class="kpi-value" id="kpi-disparity-ratio">—</div>
+        <div style="font-size:0.7rem;color:var(--muted)">F ÷ M incidence</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 2: Trends Over Time -->
+  <section class="section" aria-labelledby="section-trends-title">
+    <h2 class="section-title" id="section-trends-title">Trends Over Time</h2>
+    <div class="chart-grid-3">
+
+      <div class="chart-card">
+        <h3>New Infections Over Time</h3>
+        <div class="chart-wrap">
+          <canvas id="chart-infections-trend" role="img" aria-label="Line chart: annual new HIV infections over time by sex"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h3>AIDS Deaths Over Time</h3>
+        <div class="chart-wrap">
+          <canvas id="chart-deaths-trend" role="img" aria-label="Line chart: annual AIDS-related deaths over time by sex"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Incidence Rate Over Time</h3>
+        <div class="chart-wrap">
+          <canvas id="chart-incidence-trend" role="img" aria-label="Line chart: HIV incidence rate per 1,000 over time by sex"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 3: Gender Comparison -->
+  <section class="section" aria-labelledby="section-gender-title">
+    <h2 class="section-title" id="section-gender-title">Gender Comparison</h2>
+    <div class="chart-grid-2">
+
+      <div class="chart-card">
+        <h3>New Infections by Country &amp; Sex</h3>
+        <div class="chart-wrap-tall">
+          <canvas id="chart-infections-bar" role="img" aria-label="Horizontal grouped bar chart: new HIV infections by country and sex"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h3>AIDS Deaths by Country &amp; Sex</h3>
+        <div class="chart-wrap-tall">
+          <canvas id="chart-deaths-bar" role="img" aria-label="Horizontal grouped bar chart: AIDS deaths by country and sex"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 4: Top Countries by Disparity -->
+  <section class="section" aria-labelledby="section-spotlight-title">
+    <h2 class="section-title" id="section-spotlight-title">Top Countries by Disparity</h2>
+    <div class="chart-card" style="max-width:600px">
+      <table class="spotlight-table" aria-label="Top 5 countries by gender disparity ratio">
+        <thead>
+          <tr>
+            <th scope="col">Country</th>
+            <th scope="col">Disparity Ratio (F÷M)</th>
+            <th scope="col">Abs. Diff (Incidence)</th>
+          </tr>
+        </thead>
+        <tbody id="spotlight-tbody">
+          <tr><td colspan="3" style="text-align:center;color:var(--muted)">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 5: Regional Summary -->
+  <section class="section" aria-labelledby="section-regional-title">
+    <h2 class="section-title" id="section-regional-title">Regional Summary</h2>
+
+    <div class="regional-layout">
+      <div class="regional-card esa" aria-label="Eastern and Southern Africa summary">
+        <h3>Eastern &amp; Southern Africa</h3>
+        <div class="regional-stat">
+          <span class="stat-label">New Infections</span>
+          <span class="stat-value" id="reg-esa-infections">—</span>
+        </div>
+        <div class="regional-stat">
+          <span class="stat-label">AIDS Deaths</span>
+          <span class="stat-value" id="reg-esa-deaths">—</span>
+        </div>
+        <div class="regional-stat">
+          <span class="stat-label">PLHIV</span>
+          <span class="stat-value" id="reg-esa-plhiv">—</span>
+        </div>
+        <span class="pct-badge" id="reg-esa-pct">—</span>
+        <span style="font-size:0.72rem;color:var(--muted);margin-left:0.4rem">of total infections</span>
+      </div>
+
+      <div class="regional-card wca" aria-label="West and Central Africa summary">
+        <h3>West &amp; Central Africa</h3>
+        <div class="regional-stat">
+          <span class="stat-label">New Infections</span>
+          <span class="stat-value" id="reg-wca-infections">—</span>
+        </div>
+        <div class="regional-stat">
+          <span class="stat-label">AIDS Deaths</span>
+          <span class="stat-value" id="reg-wca-deaths">—</span>
+        </div>
+        <div class="regional-stat">
+          <span class="stat-label">PLHIV</span>
+          <span class="stat-value" id="reg-wca-plhiv">—</span>
+        </div>
+        <span class="pct-badge" id="reg-wca-pct">—</span>
+        <span style="font-size:0.72rem;color:var(--muted);margin-left:0.4rem">of total infections</span>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h3>Regional Comparison — Key Metrics</h3>
+      <div class="chart-wrap">
+        <canvas id="chart-regional" role="img" aria-label="Grouped bar chart: regional comparison of new infections, AIDS deaths, and PLHIV"></canvas>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Source: UNICEF Global HIV/AIDS Database · Ages 10–19 · 1990–2019 · Dashboard built with Chart.js, PapaParse</p>
+</footer>
+
+<!-- Application scripts (order matters) -->
+<script src="js/data.js"></script>
+<script src="js/csv-parser.js"></script>
+<script src="js/filter-engine.js"></script>
+<script src="js/data-store.js"></script>
+<script src="js/chart-renderer.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
