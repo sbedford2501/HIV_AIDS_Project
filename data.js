@@ -1,4 +1,4 @@
-// js/data.js
+﻿// js/data.js
 // HIV/AIDS Gender & Regional Disparities Dashboard — Embedded Dataset
 //
 // FULL DATASET: Replace the sample rows below with all rows from the source CSV file.
@@ -306,66 +306,66 @@ Central African Republic,West and Central Africa,2018,Female,Age 10-19,1.43,200,
 Central African Republic,West and Central Africa,2018,Male,Age 10-19,0.62,200,200,3100,25.67
 Central African Republic,West and Central Africa,2019,Female,Age 10-19,1.32,200,500,3600,18.55
 Central African Republic,West and Central Africa,2019,Male,Age 10-19,0.58,200,200,3000,22.81
-C�te d'Ivoire,West and Central Africa,1990,Female,Age 10-19,7.81,100,4400,9400,3.83
-C�te d'Ivoire,West and Central Africa,1990,Male,Age 10-19,0.46,100,500,500,0.23
-C�te d'Ivoire,West and Central Africa,1991,Female,Age 10-19,8.44,100,5000,11000,4.69
-C�te d'Ivoire,West and Central Africa,1991,Male,Age 10-19,0.49,100,500,500,0.44
-C�te d'Ivoire,West and Central Africa,1992,Female,Age 10-19,8.92,100,5600,13000,5.62
-C�te d'Ivoire,West and Central Africa,1992,Male,Age 10-19,0.51,100,500,620,0.7
-C�te d'Ivoire,West and Central Africa,1993,Female,Age 10-19,8.78,100,5700,14000,6.54
-C�te d'Ivoire,West and Central Africa,1993,Male,Age 10-19,0.5,100,500,750,1.14
-C�te d'Ivoire,West and Central Africa,1994,Female,Age 10-19,8.27,200,5700,15000,7.4
-C�te d'Ivoire,West and Central Africa,1994,Male,Age 10-19,0.47,100,500,930,1.75
-C�te d'Ivoire,West and Central Africa,1995,Female,Age 10-19,7.48,200,5300,15000,8.34
-C�te d'Ivoire,West and Central Africa,1995,Male,Age 10-19,0.43,100,500,1200,2.63
-C�te d'Ivoire,West and Central Africa,1996,Female,Age 10-19,6.8,200,5100,15000,9.35
-C�te d'Ivoire,West and Central Africa,1996,Male,Age 10-19,0.39,100,500,1500,3.88
-C�te d'Ivoire,West and Central Africa,1997,Female,Age 10-19,6.14,200,4700,15000,10.65
-C�te d'Ivoire,West and Central Africa,1997,Male,Age 10-19,0.35,100,500,2000,5.59
-C�te d'Ivoire,West and Central Africa,1998,Female,Age 10-19,5.52,500,4400,15000,12.41
-C�te d'Ivoire,West and Central Africa,1998,Male,Age 10-19,0.32,200,500,2700,7.78
-C�te d'Ivoire,West and Central Africa,1999,Female,Age 10-19,4.96,500,4100,15000,14.76
-C�te d'Ivoire,West and Central Africa,1999,Male,Age 10-19,0.29,200,500,3500,10.58
-C�te d'Ivoire,West and Central Africa,2000,Female,Age 10-19,4.44,500,3700,15000,17.81
-C�te d'Ivoire,West and Central Africa,2000,Male,Age 10-19,0.26,500,500,4600,14.13
-C�te d'Ivoire,West and Central Africa,2001,Female,Age 10-19,3.89,500,3400,15000,21.45
-C�te d'Ivoire,West and Central Africa,2001,Male,Age 10-19,0.23,500,200,5700,18.19
-C�te d'Ivoire,West and Central Africa,2002,Female,Age 10-19,3.5,500,3100,16000,25.33
-C�te d'Ivoire,West and Central Africa,2002,Male,Age 10-19,0.21,500,200,7000,22.53
-C�te d'Ivoire,West and Central Africa,2003,Female,Age 10-19,3.26,580,3000,16000,29.35
-C�te d'Ivoire,West and Central Africa,2003,Male,Age 10-19,0.19,530,200,8400,27
-C�te d'Ivoire,West and Central Africa,2004,Female,Age 10-19,2.9,680,2700,17000,33.49
-C�te d'Ivoire,West and Central Africa,2004,Male,Age 10-19,0.17,640,200,9800,31.42
-C�te d'Ivoire,West and Central Africa,2005,Female,Age 10-19,2.62,760,2500,18000,36.37
-C�te d'Ivoire,West and Central Africa,2005,Male,Age 10-19,0.16,730,200,11000,35.01
-C�te d'Ivoire,West and Central Africa,2006,Female,Age 10-19,2.39,790,2300,19000,36.82
-C�te d'Ivoire,West and Central Africa,2006,Male,Age 10-19,0.14,790,200,12000,36.84
-C�te d'Ivoire,West and Central Africa,2007,Female,Age 10-19,2.21,840,2200,20000,38.12
-C�te d'Ivoire,West and Central Africa,2007,Male,Age 10-19,0.13,850,200,13000,38.91
-C�te d'Ivoire,West and Central Africa,2008,Female,Age 10-19,2.08,890,2100,20000,39.47
-C�te d'Ivoire,West and Central Africa,2008,Male,Age 10-19,0.12,920,200,14000,40.76
-C�te d'Ivoire,West and Central Africa,2009,Female,Age 10-19,1.84,870,2000,21000,37.45
-C�te d'Ivoire,West and Central Africa,2009,Male,Age 10-19,0.11,910,200,15000,39.33
-C�te d'Ivoire,West and Central Africa,2010,Female,Age 10-19,1.69,850,1800,21000,35.76
-C�te d'Ivoire,West and Central Africa,2010,Male,Age 10-19,0.1,900,200,16000,37.98
-C�te d'Ivoire,West and Central Africa,2011,Female,Age 10-19,1.55,860,1700,21000,34.98
-C�te d'Ivoire,West and Central Africa,2011,Male,Age 10-19,0.09,910,200,16000,37.43
-C�te d'Ivoire,West and Central Africa,2012,Female,Age 10-19,1.4,840,1600,21000,33.56
-C�te d'Ivoire,West and Central Africa,2012,Male,Age 10-19,0.08,900,100,17000,36.17
-C�te d'Ivoire,West and Central Africa,2013,Female,Age 10-19,1.27,840,1500,21000,32.62
-C�te d'Ivoire,West and Central Africa,2013,Male,Age 10-19,0.08,900,100,16000,35.23
-C�te d'Ivoire,West and Central Africa,2014,Female,Age 10-19,1.17,810,1400,20000,30.76
-C�te d'Ivoire,West and Central Africa,2014,Male,Age 10-19,0.07,870,100,16000,33.38
-C�te d'Ivoire,West and Central Africa,2015,Female,Age 10-19,1.08,740,1300,20000,27.73
-C�te d'Ivoire,West and Central Africa,2015,Male,Age 10-19,0.06,830,100,16000,30.89
-C�te d'Ivoire,West and Central Africa,2016,Female,Age 10-19,0.99,700,1300,19000,25.72
-C�te d'Ivoire,West and Central Africa,2016,Male,Age 10-19,0.06,790,100,15000,28.92
-C�te d'Ivoire,West and Central Africa,2017,Female,Age 10-19,0.88,710,1100,18000,25.35
-C�te d'Ivoire,West and Central Africa,2017,Male,Age 10-19,0.05,790,100,15000,28.23
-C�te d'Ivoire,West and Central Africa,2018,Female,Age 10-19,0.76,600,1000,17000,21.29
-C�te d'Ivoire,West and Central Africa,2018,Male,Age 10-19,0.05,670,100,14000,23.59
-C�te d'Ivoire,West and Central Africa,2019,Female,Age 10-19,0.66,500,900,16000,15.09
-C�te d'Ivoire,West and Central Africa,2019,Male,Age 10-19,0.04,500,100,14000,17.15
+Cote d'Ivoire,West and Central Africa,1990,Female,Age 10-19,7.81,100,4400,9400,3.83
+Cote d'Ivoire,West and Central Africa,1990,Male,Age 10-19,0.46,100,500,500,0.23
+Cote d'Ivoire,West and Central Africa,1991,Female,Age 10-19,8.44,100,5000,11000,4.69
+Cote d'Ivoire,West and Central Africa,1991,Male,Age 10-19,0.49,100,500,500,0.44
+Cote d'Ivoire,West and Central Africa,1992,Female,Age 10-19,8.92,100,5600,13000,5.62
+Cote d'Ivoire,West and Central Africa,1992,Male,Age 10-19,0.51,100,500,620,0.7
+Cote d'Ivoire,West and Central Africa,1993,Female,Age 10-19,8.78,100,5700,14000,6.54
+Cote d'Ivoire,West and Central Africa,1993,Male,Age 10-19,0.5,100,500,750,1.14
+Cote d'Ivoire,West and Central Africa,1994,Female,Age 10-19,8.27,200,5700,15000,7.4
+Cote d'Ivoire,West and Central Africa,1994,Male,Age 10-19,0.47,100,500,930,1.75
+Cote d'Ivoire,West and Central Africa,1995,Female,Age 10-19,7.48,200,5300,15000,8.34
+Cote d'Ivoire,West and Central Africa,1995,Male,Age 10-19,0.43,100,500,1200,2.63
+Cote d'Ivoire,West and Central Africa,1996,Female,Age 10-19,6.8,200,5100,15000,9.35
+Cote d'Ivoire,West and Central Africa,1996,Male,Age 10-19,0.39,100,500,1500,3.88
+Cote d'Ivoire,West and Central Africa,1997,Female,Age 10-19,6.14,200,4700,15000,10.65
+Cote d'Ivoire,West and Central Africa,1997,Male,Age 10-19,0.35,100,500,2000,5.59
+Cote d'Ivoire,West and Central Africa,1998,Female,Age 10-19,5.52,500,4400,15000,12.41
+Cote d'Ivoire,West and Central Africa,1998,Male,Age 10-19,0.32,200,500,2700,7.78
+Cote d'Ivoire,West and Central Africa,1999,Female,Age 10-19,4.96,500,4100,15000,14.76
+Cote d'Ivoire,West and Central Africa,1999,Male,Age 10-19,0.29,200,500,3500,10.58
+Cote d'Ivoire,West and Central Africa,2000,Female,Age 10-19,4.44,500,3700,15000,17.81
+Cote d'Ivoire,West and Central Africa,2000,Male,Age 10-19,0.26,500,500,4600,14.13
+Cote d'Ivoire,West and Central Africa,2001,Female,Age 10-19,3.89,500,3400,15000,21.45
+Cote d'Ivoire,West and Central Africa,2001,Male,Age 10-19,0.23,500,200,5700,18.19
+Cote d'Ivoire,West and Central Africa,2002,Female,Age 10-19,3.5,500,3100,16000,25.33
+Cote d'Ivoire,West and Central Africa,2002,Male,Age 10-19,0.21,500,200,7000,22.53
+Cote d'Ivoire,West and Central Africa,2003,Female,Age 10-19,3.26,580,3000,16000,29.35
+Cote d'Ivoire,West and Central Africa,2003,Male,Age 10-19,0.19,530,200,8400,27
+Cote d'Ivoire,West and Central Africa,2004,Female,Age 10-19,2.9,680,2700,17000,33.49
+Cote d'Ivoire,West and Central Africa,2004,Male,Age 10-19,0.17,640,200,9800,31.42
+Cote d'Ivoire,West and Central Africa,2005,Female,Age 10-19,2.62,760,2500,18000,36.37
+Cote d'Ivoire,West and Central Africa,2005,Male,Age 10-19,0.16,730,200,11000,35.01
+Cote d'Ivoire,West and Central Africa,2006,Female,Age 10-19,2.39,790,2300,19000,36.82
+Cote d'Ivoire,West and Central Africa,2006,Male,Age 10-19,0.14,790,200,12000,36.84
+Cote d'Ivoire,West and Central Africa,2007,Female,Age 10-19,2.21,840,2200,20000,38.12
+Cote d'Ivoire,West and Central Africa,2007,Male,Age 10-19,0.13,850,200,13000,38.91
+Cote d'Ivoire,West and Central Africa,2008,Female,Age 10-19,2.08,890,2100,20000,39.47
+Cote d'Ivoire,West and Central Africa,2008,Male,Age 10-19,0.12,920,200,14000,40.76
+Cote d'Ivoire,West and Central Africa,2009,Female,Age 10-19,1.84,870,2000,21000,37.45
+Cote d'Ivoire,West and Central Africa,2009,Male,Age 10-19,0.11,910,200,15000,39.33
+Cote d'Ivoire,West and Central Africa,2010,Female,Age 10-19,1.69,850,1800,21000,35.76
+Cote d'Ivoire,West and Central Africa,2010,Male,Age 10-19,0.1,900,200,16000,37.98
+Cote d'Ivoire,West and Central Africa,2011,Female,Age 10-19,1.55,860,1700,21000,34.98
+Cote d'Ivoire,West and Central Africa,2011,Male,Age 10-19,0.09,910,200,16000,37.43
+Cote d'Ivoire,West and Central Africa,2012,Female,Age 10-19,1.4,840,1600,21000,33.56
+Cote d'Ivoire,West and Central Africa,2012,Male,Age 10-19,0.08,900,100,17000,36.17
+Cote d'Ivoire,West and Central Africa,2013,Female,Age 10-19,1.27,840,1500,21000,32.62
+Cote d'Ivoire,West and Central Africa,2013,Male,Age 10-19,0.08,900,100,16000,35.23
+Cote d'Ivoire,West and Central Africa,2014,Female,Age 10-19,1.17,810,1400,20000,30.76
+Cote d'Ivoire,West and Central Africa,2014,Male,Age 10-19,0.07,870,100,16000,33.38
+Cote d'Ivoire,West and Central Africa,2015,Female,Age 10-19,1.08,740,1300,20000,27.73
+Cote d'Ivoire,West and Central Africa,2015,Male,Age 10-19,0.06,830,100,16000,30.89
+Cote d'Ivoire,West and Central Africa,2016,Female,Age 10-19,0.99,700,1300,19000,25.72
+Cote d'Ivoire,West and Central Africa,2016,Male,Age 10-19,0.06,790,100,15000,28.92
+Cote d'Ivoire,West and Central Africa,2017,Female,Age 10-19,0.88,710,1100,18000,25.35
+Cote d'Ivoire,West and Central Africa,2017,Male,Age 10-19,0.05,790,100,15000,28.23
+Cote d'Ivoire,West and Central Africa,2018,Female,Age 10-19,0.76,600,1000,17000,21.29
+Cote d'Ivoire,West and Central Africa,2018,Male,Age 10-19,0.05,670,100,14000,23.59
+Cote d'Ivoire,West and Central Africa,2019,Female,Age 10-19,0.66,500,900,16000,15.09
+Cote d'Ivoire,West and Central Africa,2019,Male,Age 10-19,0.04,500,100,14000,17.15
 Cameroon,West and Central Africa,1990,Female,Age 10-19,2.95,100,1800,3500,1.2
 Cameroon,West and Central Africa,1990,Male,Age 10-19,0.54,100,500,590,0.22
 Cameroon,West and Central Africa,1991,Female,Age 10-19,4,100,2500,4900,1.66
@@ -2647,3 +2647,5 @@ Zimbabwe,Eastern and Southern Africa,2018,Male,Age 10-19,1.46,800,1100,37000,49.
 Zimbabwe,Eastern and Southern Africa,2019,Female,Age 10-19,5.99,690,4400,48000,42.18
 Zimbabwe,Eastern and Southern Africa,2019,Male,Age 10-19,1.43,730,1100,37000,44.57`;
 // FULL DATASET: Replace the sample rows above with all rows from the source CSV file
+
+
